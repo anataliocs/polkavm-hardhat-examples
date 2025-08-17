@@ -2,7 +2,8 @@
 
 ## Prerequisites
 
-Ensure that you have substrate-node, eth-rpc and local resolc binaries on your local machine. If not, follow these instructions to install them:
+Ensure that you have substrate-node, eth-rpc and local resolc binaries on your local machine. If not, follow these
+instructions to install them:
 
 ```bash
 git clone https://github.com/paritytech/polkadot-sdk
@@ -11,7 +12,8 @@ cargo build --bin substrate-node --release
 cargo build -p pallet-revive-eth-rpc --bin eth-rpc --release
 ```
 
-Once the build is complete, you will find both binaries in the `./target/release` directory. Copy and paste them into the `./bin` directory of this repository.
+Once the build is complete, you will find both binaries in the `./target/release` directory. Copy and paste them into
+the `./bin` directory of this repository.
 
 ## How to Initialize
 
@@ -21,7 +23,7 @@ cd uniswap-v2-polkadot
 pnpm install
 ```
 
-Open the `hardhat.config.js` file and update the following fields under networks -> hardhat:
+Open the `hardhat.config.ts` file and update the following fields under networks -> hardhat:
 
 ```
 nodeBinaryPath: Set this to the local path of your substrate-node binary.

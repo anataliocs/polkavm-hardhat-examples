@@ -2,3 +2,13 @@ node_modules/
 artifacts-pvm/
 cache-pvm/
 ignition/deployments/*
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/polkavm-hardhat-examples.iml
+/.idea/vcs.xml
+/uniswap-v2-polkadot/artifacts
+/uniswap-v2-polkadot/cache/compile-cache.json
+/.idea/jsLibraryMappings.xml
+/uniswap-v2-polkadot/pnpm-lock.yaml
+/uniswap-v2-polkadot/pnpm-workspace.yaml
+/.idea/dictionaries/project.xml
