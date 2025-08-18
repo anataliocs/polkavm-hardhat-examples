@@ -3,6 +3,9 @@
 <h1>✨ Starter Project ✨</h1>
 <h3>PBA Cohort 7 Bali </h3>
 <strong>Student: </strong> Chris Anatalio
+
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/anataliocs/polkavm-hardhat-examples)
 </div>
 
 # Uniswap V2 Demo - Polkadot Hub Smart Contract
