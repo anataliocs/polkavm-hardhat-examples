@@ -16,3 +16,4 @@ ignition/deployments/*
 /westend_runtime-*.compact.compressed.wasm
 /.env
 /.idea/compiler.xml
+/.idea/material_theme_project_new.xml
