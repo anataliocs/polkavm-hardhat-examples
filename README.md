@@ -1,12 +1,30 @@
 <div align="center"> 
+  
 <img width="2500" height="850" alt="291520797-5fd22ef9-bb01-4801-ae7d-87b888f170fd" src="https://github.com/user-attachments/assets/8ad342ba-b189-4da9-be56-03a92dcb86b9" />
-<h1>✨ Starter Project ✨</h1>
-<h3>PBA Cohort 7 Bali </h3>
-<strong>Student: </strong> Chris Anatalio
 
+<h1>✨ Starter Project ✨</h1>
+
+<h3>PBA Cohort 7 Bali </h3>
+<p><strong>Student: </strong> Chris Anatalio</p>
+<br/>
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/anataliocs/polkavm-hardhat-examples)
 </div>
+<br/>
+
+<div align="center"> 
+<h3> 💖💖💖 `POLKVM === TRUE 💖💖💖 </h3>
+</div>
+
+  
+<div align="center"> 
+  
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](#LICENSE)
+[![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](https://www.markdownguide.org/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](docs/general/contributing.md)
+
+</div>
+
 
 # Uniswap V2 Demo - Polkadot Hub Smart Contract
 
@@ -150,20 +168,27 @@ ErrorEvent {
 }
 ```
 
-Fork live Testnet
+**Fork live Testnet**
 
 ```terminaloutput
 npx hardhat node --fork https://testnet-passet-hub.polkadot.io
 \ --adapter-binary-path /Users/chrisanatalio/IdeaProjects/polkavm-hardhat-examples/uniswap/bin/eth-rpc
 ```
 
-Or
-
+**Or use the plugin native way to spin up a node**
 ```terminaloutput
 npx hardhat node-polkadot
 ```
 
 ----
+
+<div align="center"> 
+<img width="200" height="200" alt="148661419-419ad5b3-1b9f-480a-b723-3f292616730c" src="https://github.com/user-attachments/assets/bbe3fe0a-5568-4b8d-b880-8bdfa7b0d030" />
+</div>
+
+----
+
+TODO
 
 **Ensure you are in your project root directory**
 
@@ -564,8 +589,14 @@ Chainspec: https://raw.githubusercontent.com/paritytech/chainspecs/refs/heads/ma
 
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation]() or jump into
-the [Discord server]().
+Feel free to check [the documentation](https://wiki.polkadot.com/general/polkadotjs/) or jump into
+the [Discord server](https://polkadot-discord.w3f.tools/).
 
 ---
+
+<div align="center"> 
+<img width="500" height="500" alt="148661419-419ad5b3-1b9f-480a-b723-3f292616730c" src="https://github.com/user-attachments/assets/bbe3fe0a-5568-4b8d-b880-8bdfa7b0d030" />
+<i>Built with love 💗</i>
+</div>
+
 
