@@ -12,17 +12,6 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
-    "useUnknownInCatchVariables": true,
-    "paths": {
-      "@parity/hardhat-polkadot-resolc": [
-        "uniswap/node_modules/@parity/hardhat-polkadot-resolc/dist/index.js"
-      ],
-      "@parity/hardhat-polkadot-node": [
-        "uniswap/node_modules/@parity/hardhat-polkadot-node/dist/index.js"
-      ],
-      "@parity/hardhat-polkadot": [
-        "uniswap/node_modules/@parity/hardhat-polkadot/dist/index.js"
-      ]
-    }
+    "useUnknownInCatchVariables": true
   }
 }

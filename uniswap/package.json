@@ -1,39 +1,39 @@
 {
   "name": "uniswap-v2-polkadot",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "clean": "rm -rf node_modules/",
-    "prune": "pnpm prune && pnpm store prune && pnpm update",
-    "reset": "pnpm clean && pnpm prune && pnpm install ",
-    "hard-reset": "pnpm reset && pnpm install --force",
-    "compile": "npm hardhat compile --typecheck",
+    "clear": "rm -rf node_modules/",
+    "tidy": "pnpm clear && pnpm prune --no-optional && pnpm store prune && pnpm update",
+    "deps": "pnpm install --strict-peer-dependencies --no-optional && pnpm update",
+    "reset": "pnpm tidy && pnpm deps",
+    "compile": "pnpm hardhat compile --typecheck",
     "dev": "pnpm hardhat node-polkadot --show-stack-traces"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "hardhat-polkadot",
+    "parity",
+    "hardhat"
+  ],
+  "author": "anataliocs@gmail.com",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
     "@parity/hardhat-polkadot": "^0.1.10",
     "@parity/hardhat-polkadot-node": "^0.1.5",
     "@parity/hardhat-polkadot-resolc": "^0.1.8",
-    "@swc/cli": "^0.6.0",
-    "@swc/core": "^1.13.3",
-    "@types/node": "^24.3.0",
     "dockerode": "^4.0.7",
     "dotenv": "^17.2.1",
     "hardhat": "^2.26.3",
+    "polkadot-api": "^1.16.1",
     "run-container": "^2.0.12",
-    "solc": "0.8.26",
     "source-map-support": "^0.5.21",
     "ts-loader": "^9.5.2",
-    "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "tslib": "^2.8.1",
-    "tsx": "^4.20.4",
-    "typescript": "^5.9.2",
-    "typescript-eslint": "^8.39.1",
-    "@nomicfoundation/hardhat-toolbox": "^6.1.0"
+    "tsx": "^4.20.4"
+  },
+  "dependencies": {
+    "solc": "0.8.26"
   }
 }

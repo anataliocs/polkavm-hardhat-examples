@@ -1,5 +1,5 @@
 <div align="center"> 
-  
+
 <img width="2500" height="850" alt="291520797-5fd22ef9-bb01-4801-ae7d-87b888f170fd" src="https://github.com/user-attachments/assets/8ad342ba-b189-4da9-be56-03a92dcb86b9" />
 
 <h1>✨ Starter Project ✨</h1>
@@ -16,15 +16,14 @@
 <h3> 💖💖💖 POLKVM === TRUE 💖💖💖 </h3>
 </div>
 
-  
+
 <div align="center"> 
-  
+
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](#LICENSE)
 [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](https://www.markdownguide.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](docs/general/contributing.md)
 
 </div>
-
 
 # Uniswap V2 Demo - Polkadot Hub Smart Contract
 
@@ -176,6 +175,7 @@ npx hardhat node --fork https://testnet-passet-hub.polkadot.io
 ```
 
 **Or use the plugin native way to spin up a node**
+
 ```terminaloutput
 npx hardhat node-polkadot
 ```
@@ -188,105 +188,52 @@ npx hardhat node-polkadot
 
 ----
 
-TODO
-
-**Ensure you are in your project root directory**
-
-```bash
-echo $PWD
-```
-
-Confirm your project root:
-`/Users/LOCAL_USER/workspace/polkavm-hardhat-examples-YOUR-PROJECT`
-`cd` to project root if not
-
 Verify your workspace is configured correctly:
 
 ```bash
 rustc --version && cargo version && nvm current
 ```
 
+----
+
 [Node/npm setup](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial)
 
-**Your project lifecycle will consist of setup, build and deploy and UI setup steps:**
+**Setup steps:**
 
-1. Setup Polkadot accounts and env
-2. Build Contract
+1. Setup Project
+2. Compile and Test your Contract
 3. Deploy contract and setup env
 4. Interact with deployed contract
 
-**During active development**
-Upgrading your deployed contract
-
-**Next Step:** Setup Polkadot accounts and Env
+**Next Step:** Setup project
 
 ---
 
 ## STEP 1: Setup Identity and Env
 
-- Set CLI to use testnet by default
-- Generate and fund Testnet key
-- Store in `.env` as `CONTRACT OWNER`
-- Set standard contract name in `.env` to be used as an alias and package
-- Set your project root
-
-Automated scripted setup while printing out commands to execute for transparency and learning
-
-**Setup Aliases for step 1 scripts**
-
-- These will not persist through terminal sessions.
-
 ```bash
-alias step1_auto="./init/step1_auto.sh" && alias step1_verify="./init/step1_verify.sh"
+pnpm install
 ```
 
-**Auto-configuration:**
-
-- Care was taken to make scripts portable
-- Windows users will need WSL and bash
-
-```bash
-step1_auto
-```
-
-**Verify your Polkadot Dev Env is set up correctly:**
-
-```bash
-step1_verify
-```
-
-**Next Step:** Build Contract
+**Next Step:** Build/Test Contract
 
 ----
 
-## STEP 2: Build contract
+## STEP 2: Compile & Test contract
 
-- Update your contract
-- Build contract with a standard location:  `artifacts-pvm/contracts`
-- Use release profile
-- Set the BUILD_PATH in the .env
+- Compile your contract
+- Test your contract
 
-**Setup aliases for step 2 scripts**
-
-- These will not persist through terminal sessions.
+**Compile your contract:**
 
 ```bash
-alias step2_auto="./init/step2_auto.sh" && alias step2_verify="./init/step2_verify.sh"
+pnpm hardhat compile --typecheck
 ```
 
-**Auto-configuration:**
-
-- Care was taken to make scripts portable
-- Windows users will need WSL and bash
+**Run your tests:**
 
 ```bash
-step2_auto
-```
-
-**Verify your Polkadot Dev Env is set up correctly:**
-
-```bash
-step2_verify
+pnpm hardhat test --network localNode
 ```
 
 **Verify:**
