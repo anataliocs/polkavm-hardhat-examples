@@ -1,13 +1,16 @@
-import '@parity/hardhat-polkadot';
-import '@acala-network/eth-rpc-adapter'
+import "@parity/hardhat-polkadot"
+import "@nomicfoundation/hardhat-toolbox"
+import {HardhatNetworkUserConfig, HardhatUserConfig} from "hardhat/types/config";
 
-import {HardhatUserConfig} from "hardhat/types/config";
+type PolkadotHardhatConfig
+    = Extract<HardhatUserConfig, HardhatNetworkUserConfig>;
 
-const config: HardhatUserConfig = {
+const config: PolkadotHardhatConfig = {
     solidity: '0.8.26',
     resolc: {
         compilerSource: "npm",
         settings: {
+            includePaths: ["contracts"],
             optimizer: {
                 enabled: true,
             }
@@ -23,7 +26,7 @@ const config: HardhatUserConfig = {
                 dev: true,
             },
             adapterConfig: {
-                adapterBinaryPath: "/Users/chrisanatalio/IdeaProjects/polkavm-hardhat-examples/uniswap/node_modules/.bin/eth-rpc-adapter",
+                adapterBinaryPath: "/Users/chrisanatalio/IdeaProjects/polkavm-hardhat-examples/uniswap/bin/eth-rpc",
                 dev: true,
                 adapterPort: 8545,
             },

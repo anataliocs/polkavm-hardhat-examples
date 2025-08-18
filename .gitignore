@@ -15,3 +15,4 @@ ignition/deployments/*
 /.substrate-server
 /westend_runtime-*.compact.compressed.wasm
 /.env
+/.idea/compiler.xml

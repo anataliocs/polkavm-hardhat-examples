@@ -112,6 +112,9 @@ curl --proto '=https' --tlsv1.2 -sSfLO \
  | xargs -0 -I {} echo "SUBSTRATE_SERVER_FILE_NAME={}" |tee .env
 ```
 
+// TODO pull keys
+from https://github.com/paritytech/hardhat-polkadot/blob/main/packages/hardhat-polkadot-node/src/constants.ts#L22
+
 **Run Substrate Server**
 
 Spin up Node
@@ -135,6 +138,19 @@ ErrorEvent {
   cancelable: false,
   timeStamp: 1679.599333
 }
+```
+
+Fork live Testnet
+
+```terminaloutput
+npx hardhat node --fork https://testnet-passet-hub.polkadot.io
+\ --adapter-binary-path /Users/chrisanatalio/IdeaProjects/polkavm-hardhat-examples/uniswap/bin/eth-rpc
+```
+
+Or
+
+```terminaloutput
+npx hardhat node-polkadot
 ```
 
 ----
@@ -531,6 +547,8 @@ Chainspec: https://raw.githubusercontent.com/paritytech/chainspecs/refs/heads/ma
 - https://hub.docker.com/r/acala/eth-rpc-adapter/tags
 - https://github.com/AcalaNetwork/Acala/releases/download/2.30.0/acala_runtime_tracing_2300.compact.compressed.wasm
 - https://github.com/paritytech/hardhat-polkadot/blob/500cba0310fad38cf01cc7b11cb2e4043bd71482/packages/hardhat-polkadot-node/src/type-extensions.ts#L4
+- https://github.com/paritytech/hardhat-polkadot/blob/main/packages/hardhat-polkadot-node/src/services/eth-rpc.ts
+- https://github.com/paritytech/hardhat-polkadot/blob/main/packages/hardhat-polkadot-node/src/services/substrate-node.ts
 
 ----
 

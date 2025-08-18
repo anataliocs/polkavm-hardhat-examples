@@ -1,6 +1,6 @@
-import '@parity/hardhat-polkadot';
-import "@parity/hardhat-polkadot-node";
-import {HardhatUserConfig} from "hardhat/types/config";
-
-declare const config: HardhatUserConfig;
+import "@parity/hardhat-polkadot";
+import "@nomicfoundation/hardhat-toolbox";
+import { HardhatNetworkUserConfig, HardhatUserConfig } from "hardhat/types/config";
+type PolkadotHardhatConfig = Extract<HardhatUserConfig, HardhatNetworkUserConfig>;
+declare const config: PolkadotHardhatConfig;
 export default config;
