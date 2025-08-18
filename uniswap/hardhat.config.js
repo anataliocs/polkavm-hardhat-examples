@@ -1,5 +1,6 @@
 import '@parity/hardhat-polkadot';
 import "@parity/hardhat-polkadot-node";
+
 const config = {
     solidity: '0.8.28',
     resolc: {

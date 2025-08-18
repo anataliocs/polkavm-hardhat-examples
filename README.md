@@ -7,7 +7,7 @@ Ethereum-compatible smart contracts on PolkaVM using Hardhat.
 
 This repository contains the following example projects:
 
-- [**uniswap-v2-polkadot**](./uniswap-v2-polkadot/) - implementation of the Uniswap V2 codebase using `hardhat-polkadot`
+- [**uniswap-v2-polkadot**](uniswap/) - implementation of the Uniswap V2 codebase using `hardhat-polkadot`
 
 Each subfolder is a standalone Hardhat project with its own configuration, contracts, deployment scripts, and tests.
 

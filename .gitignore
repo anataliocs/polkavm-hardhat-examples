@@ -6,9 +6,12 @@ ignition/deployments/*
 /.idea/modules.xml
 /.idea/polkavm-hardhat-examples.iml
 /.idea/vcs.xml
-/uniswap-v2-polkadot/artifacts
-/uniswap-v2-polkadot/cache/compile-cache.json
+/uniswap/artifacts
+/uniswap/cache/compile-cache.json
 /.idea/jsLibraryMappings.xml
-/uniswap-v2-polkadot/pnpm-lock.yaml
-/uniswap-v2-polkadot/pnpm-workspace.yaml
+/uniswap/pnpm-lock.yaml
+/uniswap/pnpm-workspace.yaml
 /.idea/dictionaries/project.xml
+/.substrate-server
+/westend_runtime-*.compact.compressed.wasm
+/.env

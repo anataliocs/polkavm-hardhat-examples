@@ -1,4 +1,5 @@
 import '@parity/hardhat-polkadot';
+import '@acala-network/eth-rpc-adapter'
 
 import {HardhatUserConfig} from "hardhat/types/config";
 
@@ -17,14 +18,20 @@ const config: HardhatUserConfig = {
             polkavm: true,
             chainId: 31337,
             nodeConfig: {
-                nodeBinaryPath: "path/to/dev-node/binary",
+                nodeBinaryPath: "/Users/chrisanatalio/IdeaProjects/polkavm-hardhat-examples/westend_runtime-v1019002.compact.compressed.wasm",
                 rpcPort: 8000,
                 dev: true,
             },
             adapterConfig: {
-                adapterBinaryPath: "path/to/eth-rpc-adapter",
+                adapterBinaryPath: "/Users/chrisanatalio/IdeaProjects/polkavm-hardhat-examples/uniswap/node_modules/.bin/eth-rpc-adapter",
                 dev: true,
+                adapterPort: 8545,
             },
+        },
+        localNode: {
+            polkavm: true,
+            url: `http://127.0.0.1:8545`,
+
         },
         polkadotHubTestnet: {
             polkavm: true,

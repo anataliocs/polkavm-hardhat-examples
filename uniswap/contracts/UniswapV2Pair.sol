@@ -1,12 +1,13 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
-import "./interfaces/IUniswapV2Pair.sol";
-import "./UniswapV2ERC20.sol";
-import "./libraries/Math.sol";
-import "./libraries/UQ112x112.sol";
-import "./interfaces/IERC20.sol";
-import "./interfaces/IUniswapV2Factory.sol";
-import "./interfaces/IUniswapV2Callee.sol";
+
+import {UniswapV2ERC20} from "./UniswapV2ERC20.sol";
+import {IERC20} from "./interfaces/IERC20.sol";
+import {IUniswapV2Callee} from "./interfaces/IUniswapV2Callee.sol";
+import {IUniswapV2Factory} from "./interfaces/IUniswapV2Factory.sol";
+import {Math} from "./libraries/Math.sol";
+import {SafeMath} from "./libraries/SafeMath.sol";
+import {UQ112x112} from "./libraries/UQ112x112.sol";
 
 contract UniswapV2Pair is UniswapV2ERC20 {
     using SafeMath for uint;
@@ -14,7 +15,7 @@ contract UniswapV2Pair is UniswapV2ERC20 {
 
     uint public constant MINIMUM_LIQUIDITY = 10 ** 3;
     bytes4 private constant SELECTOR =
-        bytes4(keccak256(bytes("transfer(address,uint256)")));
+    bytes4(keccak256(bytes("transfer(address,uint256)")));
 
     address public factory;
     address public token0;
@@ -37,13 +38,13 @@ contract UniswapV2Pair is UniswapV2ERC20 {
     }
 
     function getReserves()
-        public
-        view
-        returns (
-            uint112 _reserve0,
-            uint112 _reserve1,
-            uint32 _blockTimestampLast
-        )
+    public
+    view
+    returns (
+        uint112 _reserve0,
+        uint112 _reserve1,
+        uint32 _blockTimestampLast
+    )
     {
         _reserve0 = reserve0;
         _reserve1 = reserve1;
@@ -142,7 +143,7 @@ contract UniswapV2Pair is UniswapV2ERC20 {
 
     // this low-level function should be called from a contract which performs important safety checks
     function mint(address to) external lock returns (uint liquidity) {
-        (uint112 _reserve0, uint112 _reserve1, ) = getReserves(); // gas savings
+        (uint112 _reserve0, uint112 _reserve1,) = getReserves(); // gas savings
         uint balance0 = IERC20(token0).balanceOf(address(this));
         uint balance1 = IERC20(token1).balanceOf(address(this));
         uint amount0 = balance0.sub(_reserve0);
@@ -169,7 +170,7 @@ contract UniswapV2Pair is UniswapV2ERC20 {
     function burn(
         address to
     ) external lock returns (uint amount0, uint amount1) {
-        (uint112 _reserve0, uint112 _reserve1, ) = getReserves(); // gas savings
+        (uint112 _reserve0, uint112 _reserve1,) = getReserves(); // gas savings
         address _token0 = token0; // gas savings
         address _token1 = token1; // gas savings
         uint balance0 = IERC20(_token0).balanceOf(address(this));
@@ -206,7 +207,7 @@ contract UniswapV2Pair is UniswapV2ERC20 {
             amount0Out > 0 || amount1Out > 0,
             "UniswapV2: INSUFFICIENT_OUTPUT_AMOUNT"
         );
-        (uint112 _reserve0, uint112 _reserve1, ) = getReserves(); // gas savings
+        (uint112 _reserve0, uint112 _reserve1,) = getReserves(); // gas savings
         require(
             amount0Out < _reserve0 && amount1Out < _reserve1,
             "UniswapV2: INSUFFICIENT_LIQUIDITY"
@@ -247,7 +248,7 @@ contract UniswapV2Pair is UniswapV2ERC20 {
             uint balance1Adjusted = balance1.mul(1000).sub(amount1In.mul(3));
             require(
                 balance0Adjusted.mul(balance1Adjusted) >=
-                    uint(_reserve0).mul(_reserve1).mul(1000 ** 2),
+                uint(_reserve0).mul(_reserve1).mul(1000 ** 2),
                 "UniswapV2: K"
             );
         }

@@ -15,13 +15,6 @@ Solidity Smart Contracts now on
 
 ----
 
-Open the `hardhat.config.ts` file and update the following fields under networks -> hardhat:
-
-```
-nodeBinaryPath: Set this to the local path of your substrate-node binary.
-adapterBinaryPath: Set this to the local path of your eth-rpc binary.
-```
-
 ## How to start with Devcontainers
 
 Read
@@ -45,8 +38,106 @@ the [GitHub Docs](https://docs.github.com/en/codespaces/setting-up-your-project-
 
 ## Local Environment Setup
 
+Guide built for MacOS.
+
+### Setup Polkadot SDK Dependencies
+
+**Instructions available here:**
 [Local environment setup](https://developers.stellar.org/docs/build/smart-contracts/getting-started)
 For support, visit the [Discord](https://polkadot-discord.w3f.tools/)
+
+[Setup ](https://docs.polkadot.com/develop/parachains/install-polkadot-sdk/)
+
+Install protobuf
+
+```terminaloutput
+brew update && brew install protobuf
+```
+
+Install SSL
+
+```terminaloutput
+brew install openssl
+```
+
+Install [Rustup](https://rustup.rs/)(Standard installation)
+
+```terminaloutput
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+**Update terminal**
+_Example command for zsh users_
+
+```terminaloutput
+if [ -r ~/.zshrc ]; then echo -e '. "$HOME/.cargo/env"' >> ~/.zshrc; \
+  else echo -e '. "$HOME/.cargo/env"' >> ~/.zprofile; fi
+```
+
+**Update Rust and set target**
+
+```terminaloutput
+rustup default stable &&
+ rustup update &&
+ rustup target add wasm32-unknown-unknown &&
+ rustup component add rust-src &&
+ rustup show
+```
+
+**Verify rust install**
+
+```terminaloutput
+rustup show &&
+ rustc --version &&
+ cargo --version
+```
+
+**Install cmake**
+
+```terminaloutput
+brew install cmake
+```
+
+### Download Server Runtimes
+
+**Download Polkadot SDK Github Release binary**
+
+- Westend Testnet Relay Chain Runtime
+- Saves wasm as filename: `westend_runtime-v1019002.compact.compressed.wasm`
+- Prints filename to console and adds to your .env file as `SUBSTRATE_SERVER_FILE_NAME`
+
+```terminaloutput
+curl --proto '=https' --tlsv1.2 -sSfLO \
+ https://github.com/paritytech/polkadot-sdk/releases/download/polkadot-stable2506/westend_runtime-v1019002.compact.compressed.wasm -w "%{filename_effective}" \
+ | xargs -0 -I {} echo "SUBSTRATE_SERVER_FILE_NAME={}" |tee .env
+```
+
+**Run Substrate Server**
+
+Spin up Node
+
+```terminaloutput
+npx hardhat node
+```
+
+Output:
+
+```terminaloutput
+starting server ...
+
+  ------------------------------------------
+  ⚡️ running in production (standard) mode ⚡️
+  ------------------------------------------
+
+ErrorEvent {
+  type: 'error',
+  defaultPrevented: false,
+  cancelable: false,
+  timeStamp: 1679.599333
+}
+```
+
+----
 
 **Ensure you are in your project root directory**
 
@@ -426,6 +517,20 @@ test suite + static analysis with app generation test. 218 github stars.
 - https://github.com/hadrysm/nextjs-boilerplate
 
 - Generates Next.js boilerplate basic UI
+
+----
+
+### Misc Links
+
+Chainspec: https://raw.githubusercontent.com/paritytech/chainspecs/refs/heads/main/westend/parachain/asset-hub-next/chainspec.json
+
+- https://github.com/paritytech/polkadot-sdk/blob/master/substrate/frame/revive/rpc/examples/westend_local_network.toml
+- https://github.com/paritytech/polkadot-sdk/tree/master/substrate/frame/revive/rpc/examples
+- https://github.com/paritytech/evm-test-suite/tree/main/eth-rpc
+- https://github.com/AcalaNetwork/Acala/tree/master/modules/evm
+- https://hub.docker.com/r/acala/eth-rpc-adapter/tags
+- https://github.com/AcalaNetwork/Acala/releases/download/2.30.0/acala_runtime_tracing_2300.compact.compressed.wasm
+-
 
 ----
 
