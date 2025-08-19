@@ -38,9 +38,11 @@
 
 <div align="center"> 
 
-[![MIT license](https://img.shields.io/badge/License-GPLv3-blue.svg)](#LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](https://www.markdownguide.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](docs/general/contributing.md)
+
+	
 
 </div>
 
@@ -48,6 +50,13 @@
 
 <div align="center"> 
 <h3> 💖💖💖 POLKVM === TRUE 💖💖💖 </h3>
+
+  <span style="margin: 0 5px;">
+    <a href="https://wiki.polkadot.com/">
+      <img src="https://img.shields.io/badge/polkadot-E6007A?style=for-the-badge&logo=polkadot&logoColor=000" alt="Polkadot"/>
+    </a>
+  </span>
+  
 </div>
 <br/>
 
@@ -403,15 +412,14 @@ contract events emitted by your contract and presents them to your front-end cli
 - Testnet data streams will include the ability to invoke the `mint()` function to generate testnet data
 
 **Run locally**
-https://github.com/anataliocs/arbitrage-apes-backend
+
 
 ```
-git clone git@github.com:anataliocs/arbitrage-apes-backend.git
+
 ```
 
 **Choose a Testnet RPC Provider**
 
-- https://developers.stellar.org/docs/data/apis/api-providers#publicly-accessible-apis
 
 ```dotenv
 
@@ -432,7 +440,7 @@ pnpm start:dev
 **Front-end → Single HTML file**
 
 - Check out `mock-sse.html` or `mock-sse-by-contractid.html` for a working example
-- Requires running `arbitrage-apes-backend` micro-indexer on port `3000`
+- Requires running micro-indexer on port `3000`
 
 **Backend SSE Example**
 
@@ -482,7 +490,7 @@ Update the contract to make it truly yours.
 
 #### Updating the Contract
 
-Open up the contract `contracts/arbitrage-apes/src/contract.rs`
+Open up the contract `uniswap/contracts/src/contract.`
 Modify
 
 **Execute this command:**
@@ -503,12 +511,12 @@ test suite + static analysis with app generation test. 218 GitHub stars.
 
 ----
 
-Related Projects
+Related
 
 - https://github.com/paritytech/hardhat-polkadot
 -
 
-### Misc Links
+### Random Links 
 
 Chainspec: https://raw.githubusercontent.com/paritytech/chainspecs/refs/heads/main/westend/parachain/asset-hub-next/chainspec.json
 
@@ -533,7 +541,7 @@ the [Discord server](https://polkadot-discord.w3f.tools/).
 
 <div align="center"> 
 <img width="500" height="500" alt="148661419-419ad5b3-1b9f-480a-b723-3f292616730c" src="https://github.com/user-attachments/assets/bbe3fe0a-5568-4b8d-b880-8bdfa7b0d030" />
-<i>Built with love 💗</i>
+<h4><i>Built with love 💗</i><h4/>
 </div>
 
 
