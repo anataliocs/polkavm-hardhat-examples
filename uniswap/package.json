@@ -27,7 +27,7 @@
     "Chris Anatalio"
   ],
   "license": "MIT",
-  "description": "",
+  "description": "Uniswap V2 Demo - Polkadot Hub Smart Contract Example.",
   "repository": {
     "url": "https://github.com/anataliocs/polkavm-hardhat-examples"
   },

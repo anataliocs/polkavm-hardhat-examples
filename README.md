@@ -28,12 +28,7 @@
 </div>
 <br/>
 
-<div align="center"> 
-<h3> 💖💖💖 POLKVM === TRUE 💖💖💖 </h3>
-</div>
-<br/>
-
-<h3 align="center">Technologies</h3>
+<h3 align="center">Tech Stack</h3>
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=rust,solidity,ts,wasm"  alt="rust,solidity,ts,wasm"/>
@@ -49,7 +44,12 @@
 
 </div>
 
-# Uniswap V2 Demo - Polkadot Hub Smart Contract
+# 📈 Uniswap V2 Demo - Polkadot Hub Smart Contract
+
+<div align="center"> 
+<h3> 💖💖💖 POLKVM === TRUE 💖💖💖 </h3>
+</div>
+<br/>
 
 Solidity Smart Contracts now on
 ✨ [Polkadot Network](https://papermoonio.github.io/polkadot-mkdocs/develop/smart-contracts/)
@@ -60,9 +60,9 @@ Solidity Smart Contracts now on
 
 ## ✨ Uniswap V2 on Polkadot Demo
 
-**Path:** `uniswap-v2-polkadot/contracts`
+**Path:** `uniswap/contracts`
 
-**Next Step:** Choose Devcontainers or Local Setup
+**First Step:** Choose Devcontainers or Local Setup
 
 ----
 
@@ -99,13 +99,13 @@ For support, visit the [Discord](https://polkadot-discord.w3f.tools/)
 
 [Setup ](https://docs.polkadot.com/develop/parachains/install-polkadot-sdk/)
 
-Install protobuf
+**Install protobuf**
 
 ```bash
 brew update && brew install protobuf
 ```
 
-Install SSL
+**Install SSL**
 
 ```bash
 brew install openssl
@@ -151,7 +151,7 @@ brew install cmake
 
 ### Download Server Runtimes (Optional)
 
-- You can also just use Docker
+- You can also use Docker
 - This approach is experimental
 
 **Download Polkadot SDK GitHub Release binary**

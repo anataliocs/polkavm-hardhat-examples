@@ -35,7 +35,6 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 const hardhat_1 = __importStar(require("hardhat")); // chai.use(solidity)
 const chai_1 = require("chai");
-console.log("test");
 function expandTo18Decimals(n) {
     return hardhat_1.default.ethers.getBigInt(n) * hardhat_1.default.ethers.getBigInt('1000000000000000000');
 }
