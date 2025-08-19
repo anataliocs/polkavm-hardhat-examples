@@ -3,8 +3,6 @@ import {expect} from "chai";
 import {ERC20} from "../typechain-types/test/ERC20.js";
 import {SignerWithAddress} from "@nomicfoundation/hardhat-ethers/signers";
 
-console.log("test");
-
 function expandTo18Decimals(n: number) {
     return env.ethers.getBigInt(n) * env.ethers.getBigInt('1000000000000000000')
 }

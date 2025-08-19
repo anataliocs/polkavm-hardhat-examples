@@ -17,3 +17,4 @@ ignition/deployments/*
 /.env
 /.idea/compiler.xml
 /.idea/material_theme_project_new.xml
+/.idea/inspectionProfiles/Project_Default.xml

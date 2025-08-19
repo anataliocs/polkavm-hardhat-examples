@@ -1,3 +1,4 @@
+<!--suppress HtmlDeprecatedAttribute -->
 <div align="center">
 <img width="1250" height="425" alt="291520797-5fd22ef9-bb01-4801-ae7d-87b888f170fd" src="https://github.com/user-attachments/assets/8ad342ba-b189-4da9-be56-03a92dcb86b9" />
 
@@ -9,17 +10,17 @@
 <p align="center">
   <span style="margin: 0 5px;">
     <a href="https://www.linkedin.com/in/anataliocs/">
-      <img src="https://raw.githubusercontent.com/anataliocs/ColoredBadges/refs/heads/master/svg/social/linkedin.svg"/>
+      <img src="https://raw.githubusercontent.com/anataliocs/ColoredBadges/refs/heads/master/svg/social/linkedin.svg" alt="linkedin"/>
     </a>
   </span>
 
   <span style="margin: 0 5px;">
     <a href="https://x.com/CAnatalio">
-      <img src="https://raw.githubusercontent.com/anataliocs/ColoredBadges/refs/heads/master/svg/social/twitter.svg" />
+      <img src="https://raw.githubusercontent.com/anataliocs/ColoredBadges/refs/heads/master/svg/social/twitter.svg"  alt="twitter"/>
     </a>
   </span>
 </p>
-<h6 align="center">Ex ConsenSys, Ex Stellar Development Foundation, Author LinkedIn Learning/Pluralsight</h6>
+<h6 align="center">Ex ConsenSys, Ex-Stellar Development Foundation, Author LinkedIn Learning/Pluralsight</h6>
 
 <br/>
 
@@ -35,7 +36,7 @@
 <h3 align="center">Technologies</h3>
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=rust,solidity,ts,wasm" />
+    <img src="https://skillicons.dev/icons?i=rust,solidity,ts,wasm"  alt="rust,solidity,ts,wasm"/>
   </a>
 </p>
 
@@ -73,7 +74,7 @@ the [GitHub Docs](https://docs.github.com/en/codespaces/setting-up-your-project-
 - Option 1:
   Create [GitHub Codespace from the GitHub UI](https://docs.github.com/en/codespaces/developing-in-a-codespace/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository)
 - Option 2: Use a template string:  `https://codespaces.new/OWNER/REPO-NAME`
-    - Replace `OWNER` with your Github name
+    - Replace `OWNER` with your GitHub name
     - Replace `REPO-NAME` with whatever you named this repo
 
 **Create an Open in GitHub Codespaces Badge:**
@@ -88,7 +89,7 @@ the [GitHub Docs](https://docs.github.com/en/codespaces/setting-up-your-project-
 
 ## Local Environment Setup
 
-Guide built for MacOS.
+Guide built for macOS.
 
 ### Setup Polkadot SDK Dependencies
 
@@ -148,12 +149,12 @@ rustup show &&
 brew install cmake
 ```
 
-### Download Server Runtimes(Optional)
+### Download Server Runtimes (Optional)
 
 - You can also just use Docker
 - This approach is experimental
 
-**Download Polkadot SDK Github Release binary**
+**Download Polkadot SDK GitHub Release binary**
 
 - Westend Testnet Relay Chain Runtime
 - Saves wasm as filename: `westend_runtime-v1019002.compact.compressed.wasm`
@@ -212,7 +213,7 @@ pnpx hardhat node-polkadot
 <div align="center"> 
 <img width="200" height="200" alt="148661419-419ad5b3-1b9f-480a-b723-3f292616730c" src="https://github.com/user-attachments/assets/bbe3fe0a-5568-4b8d-b880-8bdfa7b0d030" />
 <br>
-<h4>Section 2 - Hardhat and Solidity</h4>
+<h4>Section 2—Hardhat and Solidity</h4>
 </div>
 
 ----
@@ -232,7 +233,7 @@ rustc --version && cargo version && nvm current
 1. Setup Project
 2. Compile and Test your Contract
 3. Deploy contract and setup env
-4. Interact with deployed contract
+4. Interact with a deployed contract
 
 **Next Step:** Setup project
 
@@ -348,14 +349,14 @@ Now let's invoke the deployed contract.
 
 **Output type(json):**
 
-## Invoking your Contract with the PAPI Javascript SDK
+## Invoking your Contract with the PAPI JavaScript SDK
 
 We showed you how to use the PAPI CLI to invoke your contract, now let's do it with the
-[Javascript SDK]()
+[JavaScript SDK]()
 
 **Parameters:**
 
-- contract_id (optional) - Deployed contract ID
+- contract_id (optional)—Deployed contract ID
 - SOURCE_KEYPAIR (optional)
 
 Execute:
@@ -377,13 +378,13 @@ Execute:
 ## dApp Backend - Micro Indexer
 
 We will now create a backend to provide data for your UI. We will take a flexible approach to building a dapp
-backend giving your working examples of various way to supply data to your client front-end.
+backend, giving your working examples of various ways to supply data to your client front-end.
 
 [Indexers]() extract and transform raw blockchain data and present the
 data in a format
 that is more easily consumable by a front-end client.
 
-Indexers are generally provided as 3rd-party services. The following nest.js service is a `micro-indexer` primarily
+Indexers are generally provided as third-party services. The following nest.js service is a `micro-indexer` primarily
 built to consume
 contract events emitted by your contract and presents them to your front-end client in a streaming event-driven format.
 
@@ -397,7 +398,7 @@ contract events emitted by your contract and presents them to your front-end cli
 
 **Mock Data vs Testnet:**
 
-- Mock data streams allow you to quickly iterate on your front-end UI without having to stage actually data on-chain.
+- Mock data streams allow you to quickly iterate on your front-end UI without having to stage data on-chain.
   This data will be generated according to the schema to ensure it works with live testnet data.
 - Testnet data streams will include the ability to invoke the `mint()` function to generate testnet data
 
@@ -428,7 +429,7 @@ pnpm start:dev
 - Moves complex code from front-end to backend
 - Push JSON, HTML code, or React components or fragments to your front-end client
 
-**Front-end -> Single HTML file**
+**Front-end → Single HTML file**
 
 - Check out `mock-sse.html` or `mock-sse-by-contractid.html` for a working example
 - Requires running `arbitrage-apes-backend` micro-indexer on port `3000`
@@ -493,7 +494,7 @@ TODO
 ## Opinionated Front-end Client Creation
 
 The method of UI creation is a template that is actively maintained, 500+ deployments, and full
-test suite + static analysis with app generation test. 218 github stars.
+test suite + static analysis with app generation test. 218 GitHub stars.
 
 - https://nextjs-boilerplate-hadrysm.vercel.app/
 - https://github.com/hadrysm/nextjs-boilerplate

@@ -4,8 +4,9 @@ import "@nomicfoundation/hardhat-toolbox"
 import '@typechain/hardhat'
 import '@nomicfoundation/hardhat-ethers'
 import '@nomicfoundation/hardhat-chai-matchers'
-import {HardhatUserConfig} from "hardhat/config.js";
+import '@nomiclabs/hardhat-solhint'
 
+import {HardhatUserConfig} from "hardhat/config.js";
 
 const config: HardhatUserConfig = {
     solidity: '0.8.26',

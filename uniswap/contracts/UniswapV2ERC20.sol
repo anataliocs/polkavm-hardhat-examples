@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.26;
 
 import {IUniswapV2ERC20} from "./interfaces/IUniswapV2ERC20.sol";
 import {SafeMath} from "./libraries/SafeMath.sol";

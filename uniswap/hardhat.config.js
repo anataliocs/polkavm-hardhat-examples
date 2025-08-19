@@ -5,6 +5,7 @@ require("@nomicfoundation/hardhat-toolbox");
 require("@typechain/hardhat");
 require("@nomicfoundation/hardhat-ethers");
 require("@nomicfoundation/hardhat-chai-matchers");
+require("@nomiclabs/hardhat-solhint");
 const config = {
     solidity: '0.8.26',
     resolc: {

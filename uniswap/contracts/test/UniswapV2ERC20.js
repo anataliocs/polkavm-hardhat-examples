@@ -1,9 +1,12 @@
-import env, { ethers, network } from "hardhat"; // chai.use(solidity)
-import { expect } from "chai";
+import env, {ethers, network} from "hardhat"; // chai.use(solidity)
+import {expect} from "chai";
+
 console.log("test");
+
 function expandTo18Decimals(n) {
     return env.ethers.getBigInt(n) * env.ethers.getBigInt('1000000000000000000');
 }
+
 const TOTAL_SUPPLY = expandTo18Decimals(10000);
 const TEST_AMOUNT = expandTo18Decimals(10);
 describe('UniswapV2ERC20', function () {
@@ -19,8 +22,7 @@ describe('UniswapV2ERC20', function () {
         let value;
         if (network.name === 'localNode') {
             value = ethers.parseEther('1000000'); // Local node has higher gas fees
-        }
-        else {
+        } else {
             value = ethers.parseEther('1');
         }
         // send balance to other
@@ -39,7 +41,6 @@ describe('UniswapV2ERC20', function () {
         expect(await token.totalSupply()).to.eq(TOTAL_SUPPLY);
         expect(await token.balanceOf(deployer.address)).to.eq(TOTAL_SUPPLY);
         let token_address = await other.getAddress();
-        const getNetwork = network.provider;
         let chainId = env.network.config.chainId;
         expect(await token.DOMAIN_SEPARATOR()).to.eq(ethers.keccak256(abiCoder.encode(['bytes32', 'bytes32', 'bytes32', 'uint256', 'address'], [
             ethers.keccak256(ethers.toUtf8Bytes('EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)')),
@@ -65,11 +66,11 @@ describe('UniswapV2ERC20', function () {
         expect(await token.balanceOf(other.address)).to.eq(TEST_AMOUNT);
     });
     it('transfer:fail', async () => {
-        await expect(token.transfer(other.address, TOTAL_SUPPLY + 1n)).to.be.reverted; // ds-math-sub-underflow
+        await expect(token.transfer(other.address, TOTAL_SUPPLY + 1)).to.be.reverted; // ds-math-sub-underflow
         await expect(token.connect(other).transfer(wallet.address, 1)).to.be.reverted; // ds-math-sub-underflow
     });
     it('transferFrom', async () => {
-        await token.approve(other.address, TEST_AMOUNT);
+        token.approve(other.address, TEST_AMOUNT);
         expect(await token.allowance(wallet.address, other.address)).to.eq(TEST_AMOUNT);
         await expect(token.connect(other).transferFrom(wallet.address, other.address, TEST_AMOUNT))
             .to.emit(token, 'Transfer')
@@ -79,7 +80,7 @@ describe('UniswapV2ERC20', function () {
         expect(await token.balanceOf(other.address)).to.eq(TEST_AMOUNT);
     });
     it('transferFrom:max', async () => {
-        await token.approve(other.address, ethers.MaxUint256);
+        token.approve(other.address, ethers.MaxUint256);
         await expect(token.connect(other).transferFrom(wallet.address, other.address, TEST_AMOUNT))
             .to.emit(token, 'Transfer')
             .withArgs(wallet.address, other.address, TEST_AMOUNT);
