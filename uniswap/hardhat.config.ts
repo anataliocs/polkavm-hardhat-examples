@@ -1,6 +1,10 @@
 import "@parity/hardhat-polkadot"
 import "@nomicfoundation/hardhat-toolbox"
-import {HardhatUserConfig} from "hardhat/config";
+
+import '@typechain/hardhat'
+import '@nomicfoundation/hardhat-ethers'
+import '@nomicfoundation/hardhat-chai-matchers'
+import {HardhatUserConfig} from "hardhat/config.js";
 
 
 const config: HardhatUserConfig = {
@@ -49,7 +53,12 @@ const config: HardhatUserConfig = {
     mocha: {
         globals: ["hre"],
         ui: "tdd",
-    }
+    },
+    // Disable gas reporter (it requires opcode traces that aren't available here)
+    gasReporter: {
+        enabled: false,
+    },
+
 };
 
 export default config;

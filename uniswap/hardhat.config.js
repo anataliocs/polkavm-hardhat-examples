@@ -1,5 +1,10 @@
-import "@parity/hardhat-polkadot";
-import "@nomicfoundation/hardhat-toolbox";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("@parity/hardhat-polkadot");
+require("@nomicfoundation/hardhat-toolbox");
+require("@typechain/hardhat");
+require("@nomicfoundation/hardhat-ethers");
+require("@nomicfoundation/hardhat-chai-matchers");
 const config = {
     solidity: '0.8.26',
     resolc: {
@@ -46,6 +51,10 @@ const config = {
     mocha: {
         globals: ["hre"],
         ui: "tdd",
-    }
+    },
+    // Disable gas reporter (it requires opcode traces that aren't available here)
+    gasReporter: {
+        enabled: false,
+    },
 };
-export default config;
+exports.default = config;

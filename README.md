@@ -1,11 +1,26 @@
-<div align="center"> 
+<div align="center">
+<img width="1250" height="425" alt="291520797-5fd22ef9-bb01-4801-ae7d-87b888f170fd" src="https://github.com/user-attachments/assets/8ad342ba-b189-4da9-be56-03a92dcb86b9" />
 
-<img width="2500" height="850" alt="291520797-5fd22ef9-bb01-4801-ae7d-87b888f170fd" src="https://github.com/user-attachments/assets/8ad342ba-b189-4da9-be56-03a92dcb86b9" />
-
-<h1>✨ Starter Project ✨</h1>
+<h1>✨ dApp Track Starter Project ✨</h1>
 
 <h3>PBA Cohort 7 Bali </h3>
 <p><strong>Student: </strong> Chris Anatalio</p>
+
+<p align="center">
+  <span style="margin: 0 5px;">
+    <a href="https://www.linkedin.com/in/anataliocs/">
+      <img src="https://raw.githubusercontent.com/anataliocs/ColoredBadges/refs/heads/master/svg/social/linkedin.svg"/>
+    </a>
+  </span>
+
+  <span style="margin: 0 5px;">
+    <a href="https://x.com/CAnatalio">
+      <img src="https://raw.githubusercontent.com/anataliocs/ColoredBadges/refs/heads/master/svg/social/twitter.svg" />
+    </a>
+  </span>
+</p>
+<h6 align="center">Ex ConsenSys, Ex Stellar Development Foundation, Author LinkedIn Learning/Pluralsight</h6>
+
 <br/>
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/anataliocs/polkavm-hardhat-examples)
@@ -15,11 +30,19 @@
 <div align="center"> 
 <h3> 💖💖💖 POLKVM === TRUE 💖💖💖 </h3>
 </div>
+<br/>
+
+<h3 align="center">Technologies</h3>
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=rust,solidity,ts,wasm" />
+  </a>
+</p>
 
 
 <div align="center"> 
 
-[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](#LICENSE)
+[![MIT license](https://img.shields.io/badge/License-GPLv3-blue.svg)](#LICENSE)
 [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](https://www.markdownguide.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](docs/general/contributing.md)
 
@@ -77,33 +100,33 @@ For support, visit the [Discord](https://polkadot-discord.w3f.tools/)
 
 Install protobuf
 
-```terminaloutput
+```bash
 brew update && brew install protobuf
 ```
 
 Install SSL
 
-```terminaloutput
+```bash
 brew install openssl
 ```
 
 Install [Rustup](https://rustup.rs/)(Standard installation)
 
-```terminaloutput
+```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 **Update terminal**
 _Example command for zsh users_
 
-```terminaloutput
+```bash
 if [ -r ~/.zshrc ]; then echo -e '. "$HOME/.cargo/env"' >> ~/.zshrc; \
   else echo -e '. "$HOME/.cargo/env"' >> ~/.zprofile; fi
 ```
 
 **Update Rust and set target**
 
-```terminaloutput
+```bash
 rustup default stable &&
  rustup update &&
  rustup target add wasm32-unknown-unknown &&
@@ -113,7 +136,7 @@ rustup default stable &&
 
 **Verify rust install**
 
-```terminaloutput
+```bash
 rustup show &&
  rustc --version &&
  cargo --version
@@ -121,11 +144,14 @@ rustup show &&
 
 **Install cmake**
 
-```terminaloutput
+```bash
 brew install cmake
 ```
 
-### Download Server Runtimes
+### Download Server Runtimes(Optional)
+
+- You can also just use Docker
+- This approach is experimental
 
 **Download Polkadot SDK Github Release binary**
 
@@ -133,7 +159,7 @@ brew install cmake
 - Saves wasm as filename: `westend_runtime-v1019002.compact.compressed.wasm`
 - Prints filename to console and adds to your .env file as `SUBSTRATE_SERVER_FILE_NAME`
 
-```terminaloutput
+```bash
 curl --proto '=https' --tlsv1.2 -sSfLO \
  https://github.com/paritytech/polkadot-sdk/releases/download/polkadot-stable2506/westend_runtime-v1019002.compact.compressed.wasm -w "%{filename_effective}" \
  | xargs -0 -I {} echo "SUBSTRATE_SERVER_FILE_NAME={}" |tee .env
@@ -144,13 +170,14 @@ from https://github.com/paritytech/hardhat-polkadot/blob/main/packages/hardhat-p
 
 **Run Substrate Server**
 
-Spin up Node
+- Spin up Substrate node
+- Start up eth adapter
 
 ```terminaloutput
-npx hardhat node
+pnpx hardhat node
 ```
 
-Output:
+**Error Output:**
 
 ```terminaloutput
 starting server ...
@@ -170,20 +197,22 @@ ErrorEvent {
 **Fork live Testnet**
 
 ```terminaloutput
-npx hardhat node --fork https://testnet-passet-hub.polkadot.io
+pnpx hardhat node --fork https://testnet-passet-hub.polkadot.io
 \ --adapter-binary-path /Users/chrisanatalio/IdeaProjects/polkavm-hardhat-examples/uniswap/bin/eth-rpc
 ```
 
 **Or use the plugin native way to spin up a node**
 
 ```terminaloutput
-npx hardhat node-polkadot
+pnpx hardhat node-polkadot
 ```
 
 ----
 
 <div align="center"> 
 <img width="200" height="200" alt="148661419-419ad5b3-1b9f-480a-b723-3f292616730c" src="https://github.com/user-attachments/assets/bbe3fe0a-5568-4b8d-b880-8bdfa7b0d030" />
+<br>
+<h4>Section 2 - Hardhat and Solidity</h4>
 </div>
 
 ----
@@ -209,17 +238,25 @@ rustc --version && cargo version && nvm current
 
 ---
 
-## STEP 1: Setup Identity and Env
+## STEP 1: Setup
+
+**Install dependencies**
 
 ```bash
 pnpm install
+```
+
+**Strict Mode(Catch errors earlier at build time)**
+
+```shell
+pnpm install --strict-peer-dependencies --no-optional && pnpm update
 ```
 
 **Next Step:** Build/Test Contract
 
 ----
 
-## STEP 2: Compile & Test contract
+## STEP 2: Compile & Test Contract
 
 - Compile your contract
 - Test your contract
@@ -227,13 +264,13 @@ pnpm install
 **Compile your contract:**
 
 ```bash
-pnpm hardhat compile --typecheck
+pnpx hardhat compile --typecheck
 ```
 
 **Run your tests:**
 
 ```bash
-pnpm hardhat test --network localNode
+pnpx hardhat test --network localNode
 ```
 
 **Verify:**
@@ -248,72 +285,50 @@ pnpm hardhat test --network localNode
 
 ## STEP 3: Deploy Contract and Update Env
 
-- Use and SOURCE_ACCOUNT_CLI_NAME and from .env
-- Use Hardhat CLI to deploy contract using .env vars
-- Sets contract alias to from .env
+- Setup
+  up [account using Hardhat vars](https://docs.polkadot.com/develop/smart-contracts/dev-environments/hardhat/#deploying-to-a-live-network)
+- Use Hardhat Ignition to deploy contract using `.env` vars
 - Sets Deployed contract address to
-- Sets NFT metadata in your contract
+- Faucet:  https://faucet.polkadot.io/?parachain=1111
 
 ```bash
-alias step3_auto="./init/step3_auto.sh" alias step3_verify="./init/step3_verify.sh"
+pnpx hardhat vars set PRIVATE_KEY "INSERT_PRIVATE_KEY"
 ```
 
-**Auto-configuration:**
+**Deployed using Ignition:**
 
 ```bash
-step3_auto
-```
 
-**Verify your Contract is deployed correctly:**
-
-```bash
-step3_verify
 ```
 
 ----
 
 ## STEP 4: Interact with Deployed Contracts
 
-- Use the and from .env
-- Use Stellar CLI to generate contract bindings using .env vars
+- Use the and from `.env`
 - Sets the output package to
 - Sets Deployed contract address to
-
-> pnpm link vs file protocol:  
-> https://pnpm.io/cli/link#whats-the-difference-between-pnpm-link-and-using-the-file-protocol
 
 We have included `packages` in our include statement in `tsconfig.json`
 
 ```json
-{
-  "include": [
-    "src",
-    "packages"
-  ]
-}
+
 ```
 
 ```bash
-alias step4_auto="./init/step4_auto.sh" && alias step4_verify="./init/step4_verify.sh"
-```
 
-**Auto-configuration:**
-
-```bash
-step4_auto
 ```
 
 **Verify your Contract bindings are generated and linked correctly:**
 
 ```bash
-step4_verify
+
 ```
 
 **Review**
 
 - Your `.env` file with everything you need to build a dapp around your Open Zeppelin NFT Contract
 - Built and deployed your contract and stored the results in `contract-address.log` and `contract-build.log`
-- Deployed your contract bindings and use `npm link` which add the package `node_modules`
 
 ----
 
@@ -335,8 +350,8 @@ Now let's invoke the deployed contract.
 
 ## Invoking your Contract with the PAPI Javascript SDK
 
-We showed you how to use the Stellar CLI to invoke your contract, now let's do it with the
-[Javascript SDK](.
+We showed you how to use the PAPI CLI to invoke your contract, now let's do it with the
+[Javascript SDK]()
 
 **Parameters:**
 
@@ -346,47 +361,16 @@ We showed you how to use the Stellar CLI to invoke your contract, now let's do i
 Execute:
 
 ```bash
-pnpx tsx use_contract_bindings.ts [contract_id] [SOURCE_KEYPAIR]
+
 ```
 
 ----
 
-### What is an NFT?
-
-- It's an unique digital assets with verifiable ownership
-- It can represent much more then just an image as we commonly see
-- In this demo, we are using
-  the [Open Zeppelin NFT implementation](https://docs.openzeppelin.com/stellar-contracts/0.2.0/tokens/non-fungible)
-- NFTs can represent many different things:
-    - **Digital Access:** Access to a API, private site or forum or a set of data
-    - **Physical Access:** Access to an event functioning as a unique, verifiable digital ticket
-    - **Digital Status:** Digital identity as a member of a rewards program
-    - **Physical Status:** Access to physical rewards like swag
-    - **Digital Ownership:** Which could grant you access to a movie, game or song
-    - **Physical Ownership:** Acting as a "receipt" to receive a consumer good
-    - **Digital Credential:** Verifiable certificate that you successfully completed a course
-    - **Physical Credential:** Grants you access to receive a physical representation of a credential
-
-**The Real Potential of NFTs**
-
-- Combining these various traits unlocks new features and functionality for users
-- **Example:**
-    - Completing a course grants you a credential but also grants you access to a developer rewards program
-    - Which grants you access to in-person swag and event
-    - Which can earn you digital points which then can upgrade your membership level
-    - Which grants you access to special training materials online
-    - And also grants you to a special Discord channel
-    - And grants you access to blockchain infrastructure like Relayers, Oracles, dedicated RPC servers, indexers etc.
-    - Identifies your account on-chain for special invites like sending you a NFT ticket to an event directly
-    - And can be linked to other digital identities like your Github, Discord, email, Twitter etc.
-    - Or even linked to other on-chain NFTs or even a contract or UI deployment for instance
-    - The possibilities are endless!
-
-**Concrete Example: Open Source Software Funding**
-
-- Your NFT linked to your entire developer identity and history is linked to a specific github repo
-- This repo is an OSS package that provides a lot of value to the community
-- Other developers can buy you a coffee as a thank-you by sending a transaction to your linked account
+<div align="center"> 
+<img width="200" height="200" alt="148661419-419ad5b3-1b9f-480a-b723-3f292616730c" src="https://github.com/user-attachments/assets/bbe3fe0a-5568-4b8d-b880-8bdfa7b0d030" />
+<br>
+<h4>Section 3</h4>
+</div>
 
 ----
 
@@ -517,6 +501,11 @@ test suite + static analysis with app generation test. 218 github stars.
 - Generates Next.js boilerplate basic UI
 
 ----
+
+Related Projects
+
+- https://github.com/paritytech/hardhat-polkadot
+-
 
 ### Misc Links
 
