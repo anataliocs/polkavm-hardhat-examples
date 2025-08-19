@@ -38,11 +38,14 @@
 
 <div align="center"> 
 
+[![Hardhat (pnpm)](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/hardhat-compile.yml/badge.svg)](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/hardhat-compile.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](https://www.markdownguide.org/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](docs/general/contributing.md)
+[![CodeQL](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/github-code-scanning/codeql)
+[![WebStorm](https://img.shields.io/badge/WebStorm-000?logo=webstorm&logoColor=fff)](#)
+[![Polkadot](https://img.shields.io/badge/Polkadot-E6007A?logo=polkadot&logoColor=white)](#)
+[![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?logo=ethereum&logoColor=white)](#)
+[![hardhat-badge](https://img.shields.io/badge/Built%20with-Hardhat-FFDB1C.svg)](#)
 
-	
 
 </div>
 
@@ -56,7 +59,7 @@
       <img src="https://img.shields.io/badge/polkadot-E6007A?style=for-the-badge&logo=polkadot&logoColor=000" alt="Polkadot"/>
     </a>
   </span>
-  
+
 </div>
 <br/>
 
@@ -413,13 +416,11 @@ contract events emitted by your contract and presents them to your front-end cli
 
 **Run locally**
 
-
 ```
 
 ```
 
 **Choose a Testnet RPC Provider**
-
 
 ```dotenv
 
@@ -463,20 +464,6 @@ pnpm start:dev
   }
 ```
 
-**CORS**
-CORS is setup on the server to allow for http://localhost:63342/ and http://localhost:63343/ you will have to add this
-CORS config.
-
-- Last Resort: You can try opening Chrome in a sandbox with web security disabled:
-- This approach is NOT recommended
-
-```bash
-/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome http://localhost:63342/stellar-arbitrage-apes-future-yacht-club/index.html?_ijt=q9fn6vaje10r5bcfgmcmafoo6p&_ij_reload=RELOAD_ON_SAVE \
---args --disable-web-security --user-data-dir="~/.chrome.dev.session/" --incognito --new-window
-```
-
-----
-
 ## Customizing your contract
 
 ### Workflow
@@ -516,7 +503,7 @@ Related
 - https://github.com/paritytech/hardhat-polkadot
 -
 
-### Random Links 
+### Random Links
 
 Chainspec: https://raw.githubusercontent.com/paritytech/chainspecs/refs/heads/main/westend/parachain/asset-hub-next/chainspec.json
 
@@ -541,7 +528,7 @@ the [Discord server](https://polkadot-discord.w3f.tools/).
 
 <div align="center"> 
 <img width="500" height="500" alt="148661419-419ad5b3-1b9f-480a-b723-3f292616730c" src="https://github.com/user-attachments/assets/bbe3fe0a-5568-4b8d-b880-8bdfa7b0d030" />
-<h4><i>Built with love 💗</i><h4/>
+<h4><i>Built with love 💗</i></h4>
 </div>
 
 
