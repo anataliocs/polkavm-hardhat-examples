@@ -40,7 +40,7 @@
 
 [![Hardhat (pnpm)](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/hardhat-compile.yml/badge.svg)](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/hardhat-compile.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![CodeQL](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/github-code-scanning/codeql)
+[![CodeQL](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/codeql.yml/badge.svg)](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/codeql.yml)
 [![WebStorm](https://img.shields.io/badge/WebStorm-000?logo=webstorm&logoColor=fff)](#)
 [![Polkadot](https://img.shields.io/badge/Polkadot-E6007A?logo=polkadot&logoColor=white)](#)
 [![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?logo=ethereum&logoColor=white)](#)

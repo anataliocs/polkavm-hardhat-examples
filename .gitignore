@@ -24,6 +24,8 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 *.tsbuildinfo
+# Project uses pnpm, ignore npm lockfile
+package-lock.json
 
 # ------------------------------
 # Hardhat / Build artifacts
