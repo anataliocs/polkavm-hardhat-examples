@@ -51,18 +51,6 @@
 
 # 📈 Uniswap V2 Demo - Polkadot Hub Smart Contract
 
-<div align="center"> 
-<h3> 💖💖💖 POLKVM === TRUE 💖💖💖 </h3>
-
-  <span style="margin: 0 5px;">
-    <a href="https://wiki.polkadot.com/">
-      <img src="https://img.shields.io/badge/polkadot-E6007A?style=for-the-badge&logo=polkadot&logoColor=000" alt="Polkadot"/>
-    </a>
-  </span>
-
-</div>
-<br/>
-
 Solidity Smart Contracts now on
 ✨ [Polkadot Network](https://papermoonio.github.io/polkadot-mkdocs/develop/smart-contracts/)
 
@@ -75,6 +63,18 @@ Solidity Smart Contracts now on
 **Path:** `uniswap/contracts`
 
 **First Step:** Choose Devcontainers or Local Setup
+
+<div align="center"> 
+<h3> 💖💖💖 POLKVM === TRUE 💖💖💖 </h3>
+
+  <span style="margin: 0 5px;">
+    <a href="https://wiki.polkadot.com/">
+      <img src="https://img.shields.io/badge/polkadot-E6007A?style=for-the-badge&logo=polkadot&logoColor=000" alt="Polkadot"/>
+    </a>
+  </span>
+
+</div>
+<br/>
 
 ----
 
@@ -289,8 +289,6 @@ pnpx hardhat test --network localNode
 **Verify:**
 
 - Check for CLI warnings
-- Not the path of the generated binary
-- Ensure all functions are exported
 
 **Next Step:** Deploy Contract
 
@@ -301,7 +299,7 @@ pnpx hardhat test --network localNode
 - Setup
   up [account using Hardhat vars](https://docs.polkadot.com/develop/smart-contracts/dev-environments/hardhat/#deploying-to-a-live-network)
 - Use Hardhat Ignition to deploy contract using `.env` vars
-- Sets Deployed contract address to
+- Sets Deployed contract address
 - Faucet:  https://faucet.polkadot.io/?parachain=1111
 
 ```bash
@@ -332,7 +330,7 @@ We have included `packages` in our include statement in `tsconfig.json`
 
 ```
 
-**Verify your Contract bindings are generated and linked correctly:**
+**Verify your Deployed Contract:**
 
 ```bash
 
@@ -340,8 +338,7 @@ We have included `packages` in our include statement in `tsconfig.json`
 
 **Review**
 
-- Your `.env` file with everything you need to build a dapp around your Open Zeppelin NFT Contract
-- Built and deployed your contract and stored the results in `contract-address.log` and `contract-build.log`
+- Your `.env` file with everything you need to build a dapp around your Contract
 
 ----
 
@@ -351,7 +348,6 @@ Now let's invoke the deployed contract.
 
 - The id of the deployed contract, our default source account and the public key are stored in our `.env` file
 - Which will invoke the `mint()` function passing in the Owner public key as the recipient
-- We are passing in the token_id which we will update to be dynamically generated later on
 
 **Execute this command:**
 
@@ -382,7 +378,7 @@ Execute:
 <div align="center"> 
 <img width="200" height="200" alt="148661419-419ad5b3-1b9f-480a-b723-3f292616730c" src="https://github.com/user-attachments/assets/bbe3fe0a-5568-4b8d-b880-8bdfa7b0d030" />
 <br>
-<h4>Section 3</h4>
+<h4>Section 3--Javascript Clients</h4>
 </div>
 
 ----
@@ -503,7 +499,9 @@ Related
 - https://github.com/paritytech/hardhat-polkadot
 -
 
-### Random Links
+### Reference Links
+
+//TODO Organize
 
 Chainspec: https://raw.githubusercontent.com/paritytech/chainspecs/refs/heads/main/westend/parachain/asset-hub-next/chainspec.json
 
@@ -527,8 +525,8 @@ the [Discord server](https://polkadot-discord.w3f.tools/).
 ---
 
 <div align="center"> 
-<img width="500" height="500" alt="148661419-419ad5b3-1b9f-480a-b723-3f292616730c" src="https://github.com/user-attachments/assets/bbe3fe0a-5568-4b8d-b880-8bdfa7b0d030" />
-<h4><i>Built with love 💗</i></h4>
+<img width="300" height="300" alt="148661419-419ad5b3-1b9f-480a-b723-3f292616730c" src="https://github.com/user-attachments/assets/bbe3fe0a-5568-4b8d-b880-8bdfa7b0d030" />
+<h4><i>Built with love 💗in the Polkadot Ecosystem</i></h4>
 </div>
 
 

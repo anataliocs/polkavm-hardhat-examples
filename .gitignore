@@ -1,20 +1,55 @@
+# ------------------------------
+# OS / Editor files
+# ------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+
+# ------------------------------
+# Environment files
+# ------------------------------
+**/.env
+**/.env.*
+
+# ------------------------------
+# Node / TypeScript
+# ------------------------------
 node_modules/
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tsbuildinfo
+
+# ------------------------------
+# Hardhat / Build artifacts
+# ------------------------------
+# Generic artifacts & caches for all packages (including subfolders like uniswap/)
+**/artifacts/
+**/cache/
+typechain/
+typechain-types/
+
+# PolkaVM-specific
 artifacts-pvm/
 cache-pvm/
-ignition/deployments/*
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/polkavm-hardhat-examples.iml
-/.idea/vcs.xml
-/uniswap/artifacts
-/uniswap/cache/compile-cache.json
-/.idea/jsLibraryMappings.xml
-/uniswap/pnpm-lock.yaml
-/uniswap/pnpm-workspace.yaml
-/.idea/dictionaries/project.xml
-/.substrate-server
-/westend_runtime-*.compact.compressed.wasm
-/.env
-/.idea/compiler.xml
-/.idea/material_theme_project_new.xml
-/.idea/inspectionProfiles/Project_Default.xml
+
+# Hardhat Ignition deployments
+ignition/deployments/
+
+# ------------------------------
+# Project-specific
+# ------------------------------
+.substrate-server
+westend_runtime-*.compact.compressed.wasm
+
+# ------------------------------
+# Uniswap subproject specifics (explicit, though covered by generic patterns)
+# ------------------------------
+uniswap/artifacts/
+uniswap/cache/
+uniswap/cache/compile-cache.json
