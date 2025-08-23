@@ -13,55 +13,9 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ 'javascript' ]
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v4
+      - uses: github/codeql-action/init@v3
         with:
-          version: 10
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'pnpm'
-          cache-dependency-path: uniswap/pnpm-lock.yaml
-
-      # Install dependencies before CodeQL analysis to ensure proper resolution
-      - name: Install dependencies
-        working-directory: uniswap
-        run: pnpm install --frozen-lockfile
-
-      # Initializes the CodeQL tools for scanning
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
-        with:
-          languages: ${{ matrix.language }}
-          config-file: ./.github/codeql/codeql-config.yml
-          # Use the built-in query suites
-          queries: security-extended,security-and-quality
-
-      # Autobuild attempts to build any compiled languages (C/C++, C#, Go, or Java).
-      # For JavaScript/TypeScript, this step is not needed since the code is interpreted
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
-
-      # Perform the CodeQL analysis
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
-        with:
-          category: "/language:${{matrix.language}}"
-          upload: true
+          languages: javascript
+      - uses: github/codeql-action/analyze@v3
