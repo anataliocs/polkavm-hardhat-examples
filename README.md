@@ -38,7 +38,7 @@
 
 <div align="center"> 
 
-[![Hardhat (pnpm)](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/hardhat-compile.yml/badge.svg)](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/hardhat-compile.yml)
+[![Hardhat](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/hardhat.yml/badge.svg)](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/hardhat.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CodeQL](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/codeql.yml/badge.svg)](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/codeql.yml)
 [![WebStorm](https://img.shields.io/badge/WebStorm-000?logo=webstorm&logoColor=fff)](#)
