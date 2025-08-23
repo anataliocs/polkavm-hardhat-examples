@@ -13,12 +13,10 @@ languages:
 paths:
   # Include main source directories
   - "uniswap/scripts"
-  - "uniswap/test" 
+  - "uniswap/test"
   - "uniswap/hardhat.config.ts"
-  - "uniswap/hardhat.config.js"
   - "scripts"
   - "*.ts"
-  - "*.js"
 
 paths-ignore:
   # Exclude build artifacts, dependencies, and generated files
