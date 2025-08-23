@@ -1,4 +1,4 @@
-name: Hardhat (pnpm)
+name: Hardhat
 
 permissions:
   contents: read
