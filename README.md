@@ -39,8 +39,9 @@
 <div align="center"> 
 
 [![Hardhat](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/hardhat.yml/badge.svg)](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/hardhat.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CodeQL](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/codeql.yml/badge.svg)](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/codeql.yml)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![WebStorm](https://img.shields.io/badge/WebStorm-000?logo=webstorm&logoColor=fff)](#)
 [![Polkadot](https://img.shields.io/badge/Polkadot-E6007A?logo=polkadot&logoColor=white)](#)
 [![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?logo=ethereum&logoColor=white)](#)
@@ -59,6 +60,9 @@ Solidity Smart Contracts now on
 ----
 
 ## ✨ Uniswap V2 on Polkadot Demo
+
+Demo dapp showcasing Uniswap V2 on Polkadot using PolkVM and @parity/hardhat-polkadot with Solidity smart
+contracts and hardhat. Leverage the power of the Polkadot ecosystem to build a decentralized exchange.
 
 **Path:** `uniswap/contracts`
 
