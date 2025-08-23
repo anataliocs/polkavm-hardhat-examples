@@ -63,9 +63,9 @@ docs/
 # --- Local HTTP client scratch files ---
 *.http
 *.rest
-http-client.env.json
-substrate-node.http
-eth-rpc-ws.http
+.idea/http-client.env.json
+scripts/substrate-node.http
+scripts/eth-rpc-ws.http
 
 # --- Docker/Compose dev files (not needed inside build context) ---
 Dockerfile.dev

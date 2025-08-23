@@ -3,20 +3,19 @@ import {expect} from "chai";
 import {ERC20} from "../typechain-types/test/ERC20.js";
 import {SignerWithAddress} from "@nomicfoundation/hardhat-ethers/signers";
 
-function expandTo18Decimals(n: number) {
-    return env.ethers.getBigInt(n) * env.ethers.getBigInt('1000000000000000000')
-}
+const expandTo18Decimals = (n: number): bigint =>
+    env.ethers.getBigInt(n) * env.ethers.getBigInt('1000000000000000000');
 
-const TOTAL_SUPPLY = expandTo18Decimals(10000)
-const TEST_AMOUNT = expandTo18Decimals(10)
+const TOTAL_SUPPLY = expandTo18Decimals(10000);
+const TEST_AMOUNT = expandTo18Decimals(10);
 
-describe('UniswapV2ERC20', function () {
+describe('UniswapV2ERC20 Happy Path', () => {
 
     let token: ERC20;
     let wallet: SignerWithAddress;
     let other: SignerWithAddress;
 
-    beforeEach(async function () {
+    beforeEach(async () => {
 
         const [w, o] = await ethers.getSigners();
         wallet = w;
@@ -26,7 +25,6 @@ describe('UniswapV2ERC20', function () {
 
         token = await ERC20Factory.deploy(TOTAL_SUPPLY);
         await token.waitForDeployment();
-
 
         let value;
 
@@ -48,16 +46,22 @@ describe('UniswapV2ERC20', function () {
         const abiCoder = new ethers.AbiCoder();
 
         const name = await token.name();
-        expect(name).to.eq("Uniswap V2");
-        expect(await token.symbol()).to.eq("UNI-V2");
-        expect(await token.decimals()).to.eq(18);
-        expect(await token.totalSupply()).to.eq(TOTAL_SUPPLY);
-        expect(await token.balanceOf(deployer)).to.eq(TOTAL_SUPPLY);
+        expect(name)
+            .to.eq("Uniswap V2");
+        expect(await token.symbol())
+            .to.eq("UNI-V2");
+        expect(await token.decimals())
+            .to.eq(18);
+        expect(await token.totalSupply())
+            .to.eq(TOTAL_SUPPLY);
+        expect(await token.balanceOf(deployer))
+            .to.eq(TOTAL_SUPPLY);
 
         const tokenAddress: ERC20 = await token.waitForDeployment();
         const {chainId} = await ethers.provider.getNetwork();
 
-        expect(await token.DOMAIN_SEPARATOR()).to.eq(
+        expect(await token.DOMAIN_SEPARATOR())
+            .to.eq(
             ethers.keccak256(
                 abiCoder.encode(
                     ["bytes32", "bytes32", "bytes32", "uint256", "address"],
@@ -71,19 +75,13 @@ describe('UniswapV2ERC20', function () {
                         ethers.keccak256(ethers.toUtf8Bytes("1")),
                         chainId,
                         tokenAddress,
-                    ]
-                )
-            )
-        );
+                    ])));
 
-
-        expect(await token.PERMIT_TYPEHASH()).to.eq(
-            ethers.keccak256(
-                ethers.toUtf8Bytes(
-                    "Permit(address owner,address spender,uint256 value,uint256 nonce,uint256 deadline)"
-                )
-            )
-        );
+        expect(await token.PERMIT_TYPEHASH())
+            .to.eq(ethers.keccak256(
+            ethers.toUtf8Bytes(
+                "Permit(address owner,address spender,uint256 value,uint256 nonce,uint256 deadline)"
+            )));
     });
 
 
@@ -94,9 +92,8 @@ describe('UniswapV2ERC20', function () {
             .to.emit(token, "Approval")
             .withArgs(walletAddress, await other.getAddress(), TEST_AMOUNT);
 
-        expect(await token.allowance(walletAddress, await other.getAddress())).to.eq(
-            TEST_AMOUNT
-        );
+        expect(await token.allowance(walletAddress, await other.getAddress()))
+            .to.eq(TEST_AMOUNT);
     });
 
 
@@ -105,85 +102,74 @@ describe('UniswapV2ERC20', function () {
             .to.emit(token, "Transfer")
             .withArgs(await wallet.getAddress(), await other.getAddress(), TEST_AMOUNT);
 
-        expect(await token.balanceOf(await wallet.getAddress())).to.eq(
-            TOTAL_SUPPLY - TEST_AMOUNT
-        );
-        expect(await token.balanceOf(await other.getAddress())).to.eq(TEST_AMOUNT);
+        expect(await token.balanceOf(await wallet.getAddress()))
+            .to.eq(TOTAL_SUPPLY - TEST_AMOUNT);
+        expect(await token.balanceOf(await other.getAddress()))
+            .to.eq(TEST_AMOUNT);
     });
 
     it("transfer:fail", async () => {
-        await expect(
-            token.transfer(await other.getAddress(), TOTAL_SUPPLY + 1n)
-        ).to.be.reverted;
+        await expect(token.transfer(await other.getAddress(), TOTAL_SUPPLY + 1n))
+            .to.be.reverted;
 
-        await expect(
-            token.connect(other).transfer(await wallet.getAddress(), 1n)
-        ).to.be.reverted;
+        await expect(token.connect(other).transfer(await wallet.getAddress(), 1n))
+            .to.be.reverted;
     });
 
 
     it("transferFrom", async () => {
         await token.approve(await other.getAddress(), TEST_AMOUNT);
 
-        expect(
-            await token.allowance(
-                await wallet.getAddress(),
-                await other.getAddress()
-            )
-        ).to.eq(TEST_AMOUNT);
+        expect(await token.allowance(
+            await wallet.getAddress(),
+            await other.getAddress()
+        ))
+            .to.eq(TEST_AMOUNT);
 
         await expect(
-            token
-                .connect(other)
+            token.connect(other)
                 .transferFrom(
                     await wallet.getAddress(),
                     await other.getAddress(),
                     TEST_AMOUNT
-                )
-        )
+                ))
             .to.emit(token, "Transfer")
             .withArgs(await wallet.getAddress(), await other.getAddress(), TEST_AMOUNT);
 
-        expect(
-            await token.allowance(
-                await wallet.getAddress(),
-                await other.getAddress()
-            )
-        ).to.eq(0n);
+        expect(await token.allowance(
+            await wallet.getAddress(),
+            await other.getAddress()
+        ))
+            .to.eq(0n);
 
-        expect(await token.balanceOf(await wallet.getAddress())).to.eq(
-            TOTAL_SUPPLY - TEST_AMOUNT
-        );
-        expect(await token.balanceOf(await other.getAddress())).to.eq(TEST_AMOUNT);
+        expect(await token.balanceOf(await wallet.getAddress()))
+            .to.eq(TOTAL_SUPPLY - TEST_AMOUNT);
+        expect(await token.balanceOf(await other.getAddress()))
+            .to.eq(TEST_AMOUNT);
     });
 
 
     it("transferFrom:max", async () => {
         await token.approve(await other.getAddress(), ethers.MaxUint256);
 
-        await expect(
-            token
-                .connect(other)
-                .transferFrom(
-                    await wallet.getAddress(),
-                    await other.getAddress(),
-                    TEST_AMOUNT
-                )
-        )
+        await expect(token.connect(other)
+            .transferFrom(await wallet.getAddress(),
+                await other.getAddress(),
+                TEST_AMOUNT
+            ))
             .to.emit(token, "Transfer")
             .withArgs(await wallet.getAddress(), await other.getAddress(), TEST_AMOUNT);
 
-        expect(
-            await token.allowance(
-                await wallet.getAddress(),
-                await other.getAddress()
-            )
-        ).to.eq(ethers.MaxUint256);
+        expect(await token.allowance(
+            await wallet.getAddress(),
+            await other.getAddress()
+        ))
+            .to.eq(ethers.MaxUint256);
 
-        expect(await token.balanceOf(await wallet.getAddress())).to.eq(
-            TOTAL_SUPPLY - TEST_AMOUNT
-        );
-        expect(await token.balanceOf(await other.getAddress())).to.eq(TEST_AMOUNT);
+        expect(await token.balanceOf(await wallet.getAddress()))
+            .to.eq(TOTAL_SUPPLY - TEST_AMOUNT);
+
+        expect(await token.balanceOf(await other.getAddress()))
+            .to.eq(TEST_AMOUNT);
     });
-
 });

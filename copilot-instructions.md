@@ -1,13 +1,13 @@
-# Copilot Instructions: Smart Contract Security Best Practices
+# Copilot Instructions: Hardhat and Solidity with Ethers Smart Contract Security Best Practices
 
 Purpose: Use this file to guide AI assistants (e.g., GitHub Copilot / Chat) and contributors toward secure patterns when
 writing, modifying, or reviewing smart contracts and related scripts in this repository.
 
-If a suggestion conflicts with any rule below, prefer SECURITY over brevity or gas savings unless explicitly justified.
+If a suggestion conflicts with any rule below, prefer SECURITY to brevity or gas savings unless explicitly justified.
 
 ## How to use this document
 
-- When generating code, explain security-relevant choices (1–3 sentences) and point to the rule(s) you followed.
+- When generating code, explain security-relevant choices (1–2 sentences) and point to the rule(s) you followed.
 - If a request could be unsafe (e.g., bypassing checks), ask a clarifying question before producing code.
 - Prefer minimal, auditable changes; avoid cleverness that obscures logic.
 - Provide tests that prove security properties (reentrancy, access control, failure modes) with each change.

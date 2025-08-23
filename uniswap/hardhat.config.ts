@@ -1,14 +1,24 @@
 import "@parity/hardhat-polkadot"
 import "@nomicfoundation/hardhat-toolbox"
+import '@nomicfoundation/hardhat-ignition-ethers'
 
 import '@typechain/hardhat'
 import '@nomicfoundation/hardhat-ethers'
 import '@nomicfoundation/hardhat-chai-matchers'
 import '@nomiclabs/hardhat-solhint'
+import 'chai'
 
 import {HardhatUserConfig} from "hardhat/config.js";
 
+// Ensure PAPI treats "pending" as "latest" to avoid UnknownBlock on eth_getTransactionCount
+process.env.PAPI_ETH_PENDING_IS_LATEST = process.env.PAPI_ETH_PENDING_IS_LATEST ?? "1";
+
+
 const config: HardhatUserConfig = {
+    ignition: {
+
+        strategyConfig: {}
+    },
     solidity: '0.8.26',
     resolc: {
         compilerSource: "npm",
@@ -53,12 +63,17 @@ const config: HardhatUserConfig = {
     },
     mocha: {
         globals: ["hre"],
-        ui: "tdd",
+        ui: "bdd",
+        rootHooks: {
+            beforeAll: done => {
+            }
+        }
     },
     // Disable gas reporter (it requires opcode traces that aren't available here)
     gasReporter: {
         enabled: false,
     },
+
 
 };
 

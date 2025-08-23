@@ -2,11 +2,18 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 require("@parity/hardhat-polkadot");
 require("@nomicfoundation/hardhat-toolbox");
+require("@nomicfoundation/hardhat-ignition-ethers");
 require("@typechain/hardhat");
 require("@nomicfoundation/hardhat-ethers");
 require("@nomicfoundation/hardhat-chai-matchers");
 require("@nomiclabs/hardhat-solhint");
+require("chai");
+// Ensure PAPI treats "pending" as "latest" to avoid UnknownBlock on eth_getTransactionCount
+process.env.PAPI_ETH_PENDING_IS_LATEST = process.env.PAPI_ETH_PENDING_IS_LATEST ?? "1";
 const config = {
+    ignition: {
+        strategyConfig: {}
+    },
     solidity: '0.8.26',
     resolc: {
         compilerSource: "npm",
@@ -51,7 +58,11 @@ const config = {
     },
     mocha: {
         globals: ["hre"],
-        ui: "tdd",
+        ui: "bdd",
+        rootHooks: {
+            beforeAll: done => {
+            }
+        }
     },
     // Disable gas reporter (it requires opcode traces that aren't available here)
     gasReporter: {
