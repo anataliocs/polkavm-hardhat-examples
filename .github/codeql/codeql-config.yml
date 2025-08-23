@@ -33,13 +33,6 @@ paths-ignore:
   - "uniswap/package-lock.json"
   - "uniswap/pnpm-lock.yaml"
 
-# Additional security queries to include beyond default suite
-queries:
-  - name: security-extended
-    uses: security-extended
-  - name: security-and-quality
-    uses: security-and-quality
-
 # Query filters to exclude certain queries if needed
 query-filters:
   # Exclude common false positives or low-priority findings for this project type
