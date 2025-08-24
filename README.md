@@ -1,6 +1,6 @@
 <!--suppress HtmlDeprecatedAttribute -->
 <div align="center">
-<img width="1250" height="425" alt="291520797-5fd22ef9-bb01-4801-ae7d-87b888f170fd" src="https://github.com/user-attachments/assets/8ad342ba-b189-4da9-be56-03a92dcb86b9" />
+<img width="1250" height="425" alt="Polkadot Blockchain Academy Banner Img" src="https://github.com/user-attachments/assets/8ad342ba-b189-4da9-be56-03a92dcb86b9" />
 
 <h1>✨ dApp Track Starter Project ✨</h1>
 
@@ -10,17 +10,17 @@
 <p align="center">
   <span style="margin: 0 5px;">
     <a href="https://www.linkedin.com/in/anataliocs/">
-      <img src="https://raw.githubusercontent.com/anataliocs/ColoredBadges/refs/heads/master/svg/social/linkedin.svg" alt="linkedin"/>
+      <img src="https://raw.githubusercontent.com/anataliocs/ColoredBadges/refs/heads/master/svg/social/linkedin.svg" alt="linkedin chris anatalio"/>
     </a>
   </span>
 
   <span style="margin: 0 5px;">
     <a href="https://x.com/CAnatalio">
-      <img src="https://raw.githubusercontent.com/anataliocs/ColoredBadges/refs/heads/master/svg/social/twitter.svg"  alt="twitter"/>
+      <img src="https://raw.githubusercontent.com/anataliocs/ColoredBadges/refs/heads/master/svg/social/twitter.svg" alt="twitter chris anatalio"/>
     </a>
   </span>
 </p>
-<h6 align="center">Ex ConsenSys, Ex-Stellar Development Foundation, Author LinkedIn Learning/Pluralsight</h6>
+<h6 align="center">Ex ConsenSys, Ex Stellar Development Foundation, Author LinkedIn Learning/Pluralsight</h6>
 
 <br/>
 
@@ -42,29 +42,30 @@
 [![CodeQL](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/codeql.yml/badge.svg)](https://github.com/anataliocs/polkavm-hardhat-examples/actions/workflows/codeql.yml)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![WebStorm](https://img.shields.io/badge/WebStorm-000?logo=webstorm&logoColor=fff)](#)
-[![Polkadot](https://img.shields.io/badge/Polkadot-E6007A?logo=polkadot&logoColor=white)](#)
-[![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?logo=ethereum&logoColor=white)](#)
-[![hardhat-badge](https://img.shields.io/badge/Built%20with-Hardhat-FFDB1C.svg)](#)
+[![WebStorm](https://img.shields.io/badge/WebStorm-000?logo=webstorm&logoColor=fff)](https://www.jetbrains.com/webstorm)
+[![Polkadot](https://img.shields.io/badge/Polkadot-E6007A?logo=polkadot&logoColor=white)](https://wiki.polkadot.com/)
+[![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?logo=ethereum&logoColor=white)](https://ethereum.org/)
+[![hardhat-badge](https://img.shields.io/badge/Built%20with-Hardhat-FFDB1C.svg)](https://hardhat.org/)
 
 
 </div>
 
-# 📈 Uniswap V2 Demo - Polkadot Hub Smart Contract
+# 📈 Uniswap V2 Demo—Polkadot Hub Smart Contract
 
 Solidity Smart Contracts now on
 ✨ [Polkadot Network](https://papermoonio.github.io/polkadot-mkdocs/develop/smart-contracts/)
 
-- [Create your own contract](https://docs.polkadot.com/tutorials/smart-contracts/launch-your-first-project/create-contracts/)
+💻 [Create your own contract](https://docs.polkadot.com/tutorials/smart-contracts/launch-your-first-project/create-contracts/)
 
 ----
 
-## ✨ Uniswap V2 on Polkadot Demo
+## Uniswap V2 Solidity Smart Contracts with PolkVM on the Polkadot Network
 
 Demo dapp showcasing Uniswap V2 on Polkadot using PolkVM and @parity/hardhat-polkadot with Solidity smart
-contracts and hardhat. Leverage the power of the Polkadot ecosystem to build a decentralized exchange.
+contracts and hardhat. Leverage the power of the Polkadot ecosystem to build a decentralized exchange with PolkVM and
+standard tools like Hardhat and TypeScript with custom hardhat-polkadot plugins.
 
-**Path:** `uniswap/contracts`
+**Contracts:** `uniswap/contracts`
 
 **First Step:** Choose Devcontainers or Local Setup
 
@@ -73,7 +74,7 @@ contracts and hardhat. Leverage the power of the Polkadot ecosystem to build a d
 
   <span style="margin: 0 5px;">
     <a href="https://wiki.polkadot.com/">
-      <img src="https://img.shields.io/badge/polkadot-E6007A?style=for-the-badge&logo=polkadot&logoColor=000" alt="Polkadot"/>
+      <img src="https://img.shields.io/badge/polkadot-E6007A?style=for-the-badge&logo=polkadot&logoColor=000" alt="Polkadot Smart Contracts"/>
     </a>
   </span>
 
@@ -82,7 +83,7 @@ contracts and hardhat. Leverage the power of the Polkadot ecosystem to build a d
 
 ----
 
-## How to start with Devcontainers
+## Get Started with Devcontainers for Polkadot
 
 Read
 the [GitHub Docs](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/setting-up-your-repository/facilitating-quick-creation-and-resumption-of-codespaces)
@@ -105,15 +106,15 @@ the [GitHub Docs](https://docs.github.com/en/codespaces/setting-up-your-project-
 
 ## Local Environment Setup
 
-Guide built for macOS.
+Guide built for macOS
 
 ### Setup Polkadot SDK Dependencies
 
 **Instructions available here:**
-[Local environment setup](https://developers.stellar.org/docs/build/smart-contracts/getting-started)
+[Local environment setup]()
 For support, visit the [Discord](https://polkadot-discord.w3f.tools/)
 
-[Setup ](https://docs.polkadot.com/develop/parachains/install-polkadot-sdk/)
+[Setup](https://docs.polkadot.com/develop/parachains/install-polkadot-sdk/)
 
 **Install protobuf**
 
@@ -170,21 +171,6 @@ brew install cmake
 - You can also use Docker
 - This approach is experimental
 
-**Download Polkadot SDK GitHub Release binary**
-
-- Westend Testnet Relay Chain Runtime
-- Saves wasm as filename: `westend_runtime-v1019002.compact.compressed.wasm`
-- Prints filename to console and adds to your .env file as `SUBSTRATE_SERVER_FILE_NAME`
-
-```bash
-curl --proto '=https' --tlsv1.2 -sSfLO \
- https://github.com/paritytech/polkadot-sdk/releases/download/polkadot-stable2506/westend_runtime-v1019002.compact.compressed.wasm -w "%{filename_effective}" \
- | xargs -0 -I {} echo "SUBSTRATE_SERVER_FILE_NAME={}" |tee .env
-```
-
-// TODO pull keys
-from https://github.com/paritytech/hardhat-polkadot/blob/main/packages/hardhat-polkadot-node/src/constants.ts#L22
-
 **Run Substrate Server**
 
 - Spin up Substrate node
@@ -223,6 +209,22 @@ pnpx hardhat node --fork https://testnet-passet-hub.polkadot.io
 ```terminaloutput
 pnpx hardhat node-polkadot
 ```
+
+**Download Polkadot SDK GitHub Release binary**
+
+- Westend Testnet Relay Chain Runtime
+- Saves wasm as filename: `westend_runtime-v1019002.compact.compressed.wasm`
+- Prints filename to console and adds to your .env file as `SUBSTRATE_SERVER_FILE_NAME`
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSfLO \
+ https://github.com/paritytech/polkadot-sdk/releases/download/polkadot-stable2506/westend_runtime-v1019002.compact.compressed.wasm -w "%{filename_effective}" \
+ | xargs -0 -I {} echo "SUBSTRATE_SERVER_FILE_NAME={}" |tee .env
+```
+
+//TODO pull keys
+from https://github.com/paritytech/hardhat-polkadot/blob/main/packages/hardhat-polkadot-node/src/constants.ts#L22
+
 
 ----
 
@@ -263,7 +265,8 @@ rustc --version && cargo version && nvm current
 pnpm install
 ```
 
-**Strict Mode(Catch errors earlier at build time)**
+**Strict Mode(Catch potential errors at build time)**
+_This is optional, but recommended._
 
 ```shell
 pnpm install --strict-peer-dependencies --no-optional && pnpm update
@@ -278,7 +281,7 @@ pnpm install --strict-peer-dependencies --no-optional && pnpm update
 - Compile your contract
 - Test your contract
 
-**Compile your contract:**
+**Compile your contract(With type checking):**
 
 ```bash
 pnpx hardhat compile --typecheck
@@ -292,7 +295,9 @@ pnpx hardhat test --network localNode
 
 **Verify:**
 
-- Check for CLI warnings
+```shell
+
+```
 
 **Next Step:** Deploy Contract
 
@@ -310,7 +315,7 @@ pnpx hardhat test --network localNode
 pnpx hardhat vars set PRIVATE_KEY "INSERT_PRIVATE_KEY"
 ```
 
-**Deployed using Ignition:**
+**Deploy using Ignition Modules:**
 
 ```bash
 
@@ -382,7 +387,7 @@ Execute:
 <div align="center"> 
 <img width="200" height="200" alt="148661419-419ad5b3-1b9f-480a-b723-3f292616730c" src="https://github.com/user-attachments/assets/bbe3fe0a-5568-4b8d-b880-8bdfa7b0d030" />
 <br>
-<h4>Section 3--Javascript Clients</h4>
+<h4>Section 3--Javascript Clients and APIs</h4>
 </div>
 
 ----
