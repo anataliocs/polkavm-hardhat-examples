@@ -1,11 +1,8 @@
 <!--suppress HtmlDeprecatedAttribute -->
 <div align="center">
-<img width="1250" height="425" alt="Polkadot Blockchain Academy Banner Img" src="https://github.com/user-attachments/assets/8ad342ba-b189-4da9-be56-03a92dcb86b9" />
+<img width="125" height="42" alt="Polkadot Blockchain Academy Banner Img" src="https://github.com/user-attachments/assets/8ad342ba-b189-4da9-be56-03a92dcb86b9" />
 
-<h1>✨ dApp Track Starter Project ✨</h1>
-
-<h3>PBA Cohort 7 Bali </h3>
-<p><strong>Student: </strong> Chris Anatalio</p>
+<h1>✨ dApp Starter Project ✨</h1>
 
 <p align="center">
   <span style="margin: 0 5px;">
